@@ -10,7 +10,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 interface GitHubService {
     @GET("search/repositories?q={query}")
-    fun listRepos(@Path("query") query: String?): Call<MutableList<Repo?>?>?
+    fun getListRepository(@Path("query") query: String?): Call<MutableList<Repo?>?>?
 
     companion object {
 
