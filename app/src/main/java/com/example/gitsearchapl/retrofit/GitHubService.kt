@@ -1,16 +1,15 @@
 package com.example.gitsearchapl.retrofit
 
-import com.google.firebase.database.core.Repo
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.http.Query
 
 
 interface GitHubService {
     @GET("search/repositories?q={query}")
-    fun getListRepository(@Path("query") query: String?): Call<MutableList<Repo?>?>?
+    fun getListRepository(@Query("q") query: String?): Call<List<GitHubResult?>?>?
 
     companion object {
 

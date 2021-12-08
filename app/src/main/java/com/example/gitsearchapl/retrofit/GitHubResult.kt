@@ -1,3 +1,11 @@
 package com.example.gitsearchapl.retrofit
 
-data class GitHubResult (var ResultSearch: String, var ResultUrl: String)
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class GitHubResult (
+    @Json(name="name")
+    var ResultSearch: String,
+    @Json(name="url")
+    var ResultUrl: String)
