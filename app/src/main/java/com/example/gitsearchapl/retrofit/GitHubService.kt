@@ -8,10 +8,10 @@ import retrofit2.http.Query
 
 
 interface GitHubService {
-    @GET("search/repositories?q={query}")
-    fun getListRepository(@Query("q") query: String?): Call<List<GitHubResult?>?>?
+    @GET("users")
+    fun getListRepository(): Call<List<GitHubResult>>
 
-    companion object {
+    /*companion object {
 
         var BASE_URL = "https://api.github.com/"
 
@@ -24,5 +24,5 @@ interface GitHubService {
             return retrofit.create(GitHubService::class.java)
 
         }
-    }
+    }*/
 }
