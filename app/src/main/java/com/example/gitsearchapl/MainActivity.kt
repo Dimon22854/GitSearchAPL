@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gitsearchapl.retrofit.GitHubResult
 import com.example.gitsearchapl.retrofit.GitHubService
 import com.example.gitsearchapl.retrofit.RecyclerAdapter
+import com.google.firebase.database.core.Repo
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = recyclerAdapter
 
-
-        val apiInterface = GitHubService.create().getListRepository("sql")
+        val call: Call<MutableList<Repo?>?>? = GitHubService.create().getListRepository("sql")
+        //val apiInterface = GitHubService.create().getListRepository("sql")
 
         //apiInterface.enqueue( Callback<List<Movie>>()
         /*apiInterface.enqueue( object : Callback<List<GitHubResult>> {

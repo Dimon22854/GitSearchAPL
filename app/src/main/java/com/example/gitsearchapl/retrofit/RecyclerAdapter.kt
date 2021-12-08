@@ -25,8 +25,8 @@ class RecyclerAdapter(val context: Context) : RecyclerView.Adapter<RecyclerAdapt
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        holder.title.text = resultList.get(position).ResultSearch
-        holder.id.text = resultList.get(position).ResultUrl
+        holder.ResultSearch.text = resultList.get(position).ResultSearch
+        holder.ResultUrl.text = resultList.get(position).ResultUrl
         /*Glide.with(context).load(movieList.get(position).id)
                 .apply(RequestOptions().centerCrop())
                 .into(holder.id)*/
@@ -40,8 +40,8 @@ class RecyclerAdapter(val context: Context) : RecyclerView.Adapter<RecyclerAdapt
 
     class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
 
-        val title: TextView = itemView!!.findViewById(R.id.ResultSearch)
-        val id: TextView = itemView!!.findViewById(R.id.ResultUrl)
+        val ResultSearch: TextView = itemView!!.findViewById(R.id.ResultSearch)
+        val ResultUrl: TextView = itemView!!.findViewById(R.id.ResultUrl)
 
     }
 }
