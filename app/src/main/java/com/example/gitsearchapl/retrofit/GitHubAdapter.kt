@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gitsearchapl.R
 import kotlinx.android.synthetic.main.recyclerview_adapter.view.*
 
-class GitHubAdapter(val users: MutableList<GitHubResult>) : RecyclerView.Adapter<GitHubAdapter.MyViewHolder>() {
+class GitHubAdapter(val users: List<GitHubResult>) : RecyclerView.Adapter<GitHubAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ResultSearch: TextView = itemView.ResultSearch

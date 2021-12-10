@@ -27,12 +27,7 @@ class MainActivity : AppCompatActivity() {
             users.add(GitHubResult("1","Dima"))
         }
 
-        list_search.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = GitHubAdapter(users)
-        }
-
-        /*val retrofit = Retrofit.Builder()
+        val retrofit = Retrofit.Builder()
             .baseUrl("https://api.github.com/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
@@ -43,13 +38,14 @@ class MainActivity : AppCompatActivity() {
                 call: Call<List<GitHubResult>>,
                 response: Response<List<GitHubResult>>
             ) {
-                d("Dima", "onResponse: ${response.body()!![0].login}")
+                showData(response.body()!!)
+                //d("Dima", "onResponse: ${response.body()!![0].login}")
             }
 
             override fun onFailure(call: Call<List<GitHubResult>>, t: Throwable) {
                 d("Dima", "onFailure")
             }
-        })*/
+        })
 
         /*recyclerView = findViewById(R.id.list_search)
         recyclerAdapter = RecyclerAdapter(this)
@@ -74,6 +70,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun showData(users: List<GitHubResult>) {
+
+        list_search.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = GitHubAdapter(users)
+
+        }
+    }
 
 
 }
