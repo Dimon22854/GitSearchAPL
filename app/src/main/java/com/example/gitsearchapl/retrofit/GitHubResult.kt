@@ -3,8 +3,8 @@ package com.example.gitsearchapl.retrofit
 import com.squareup.moshi.Json
 
 data class GitHubResult (
-    @Json(name = "id")
-    val id: String,
+    @Json(name = "html_url")
+    val html_url: String,
     @Json(name = "login")
     val login: String
     )

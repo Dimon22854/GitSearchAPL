@@ -46,28 +46,6 @@ class MainActivity : AppCompatActivity() {
                 d("Dima", "onFailure")
             }
         })
-
-        /*recyclerView = findViewById(R.id.list_search)
-        recyclerAdapter = RecyclerAdapter(this)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = recyclerAdapter*/
-
-        //val call: Call<MutableList<Repo?>?>? = GitHubService.create().getListRepository("sql")
-        /*val apiInterface = GitHubService.create().getListRepository()
-
-        apiInterface.enqueue(object : Callback<List<GitHubResult>>{
-            override fun onResponse(
-                call: Call<List<GitHubResult>>,
-                response: Response<List<GitHubResult>>
-            ) {
-                d("dima","onResponse")
-            }
-
-            override fun onFailure(call: Call<List<GitHubResult>>, t: Throwable) {
-                d("dima","onFailure")
-            }
-        })*/
-
     }
 
     private fun showData(users: List<GitHubResult>) {
