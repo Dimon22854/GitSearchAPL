@@ -5,11 +5,14 @@ import retrofit2.http.GET
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.Query
+import com.google.firebase.database.core.Repo
+import retrofit2.http.Path
 
 
 interface GitHubService {
-    @GET("users")
-    fun getListRepository(): Call<List<GitHubResult>>
+    @GET("{users}")
+    //fun getListRepository(): Call<List<GitHubResult>>
+    fun getListRepository(@Path("users") users: String): Call<List<GitHubResult>>
 
     /*companion object {
 
