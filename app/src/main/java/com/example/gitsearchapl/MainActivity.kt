@@ -34,54 +34,57 @@ class MainActivity : AppCompatActivity() {
         val api = retrofit.create(GitHubService::class.java)
 
         //val repos: Call<List<Repo>> = api.getListRepository("octocat")
+        btn_search.setOnClickListener {
+            api.getListRepository("repositories").enqueue(object : Call<List<GitHubResult>>,
+                Callback<List<GitHubResult>> {
+                override fun clone(): Call<List<GitHubResult>> {
+                    TODO("Not yet implemented")
+                }
 
-        api.getListRepository("repositories").enqueue(object : Call<List<GitHubResult>>,
-            Callback<List<GitHubResult>> {
-            override fun clone(): Call<List<GitHubResult>> {
-                TODO("Not yet implemented")
-            }
+                override fun execute(): Response<List<GitHubResult>> {
+                    TODO("Not yet implemented")
+                }
 
-            override fun execute(): Response<List<GitHubResult>> {
-                TODO("Not yet implemented")
-            }
+                override fun enqueue(callback: Callback<List<GitHubResult>>) {
+                    TODO("Not yet implemented")
+                }
 
-            override fun enqueue(callback: Callback<List<GitHubResult>>) {
-                TODO("Not yet implemented")
-            }
+                override fun isExecuted(): Boolean {
+                    TODO("Not yet implemented")
+                }
 
-            override fun isExecuted(): Boolean {
-                TODO("Not yet implemented")
-            }
+                override fun cancel() {
+                    TODO("Not yet implemented")
+                }
 
-            override fun cancel() {
-                TODO("Not yet implemented")
-            }
+                override fun isCanceled(): Boolean {
+                    TODO("Not yet implemented")
+                }
 
-            override fun isCanceled(): Boolean {
-                TODO("Not yet implemented")
-            }
+                override fun request(): Request {
+                    TODO("Not yet implemented")
+                }
 
-            override fun request(): Request {
-                TODO("Not yet implemented")
-            }
+                override fun timeout(): Timeout {
+                    TODO("Not yet implemented")
+                }
 
-            override fun timeout(): Timeout {
-                TODO("Not yet implemented")
-            }
+                override fun onResponse(
+                    call: Call<List<GitHubResult>>,
+                    response: Response<List<GitHubResult>>
+                ) {
+                    showData(response.body()!!)
+                    //d("Dima", "onResponse: ${response.body()!![0].login}")
+                }
 
-            override fun onResponse(
-                call: Call<List<GitHubResult>>,
-                response: Response<List<GitHubResult>>
-            ) {
-                showData(response.body()!!)
-                //d("Dima", "onResponse: ${response.body()!![0].login}")
-            }
+                override fun onFailure(call: Call<List<GitHubResult>>, t: Throwable) {
+                    d("Dima", "onFailure")
+                }
 
-            override fun onFailure(call: Call<List<GitHubResult>>, t: Throwable) {
-                d("Dima", "onFailure")
-            }
+            })
+        }
 
-        })
+
 
         /*api.getListRepository("users").enqueue( object : Callback<List<GitHubResult>>{
             override fun onResponse(
