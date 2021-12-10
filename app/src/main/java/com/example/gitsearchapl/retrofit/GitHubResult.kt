@@ -5,8 +5,8 @@ import com.squareup.moshi.Json
 data class GitHubResult (
     @Json(name = "html_url")
     val html_url: String,
-    @Json(name = "login")
-    val login: String
+    @Json(name = "name")
+    val name: String
     )
 /*
     "login": "mojombo",

@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         //val repos: Call<List<Repo>> = api.getListRepository("octocat")
 
-        api.getListRepository("users").enqueue(object : Call<List<GitHubResult>>,
+        api.getListRepository("repositories").enqueue(object : Call<List<GitHubResult>>,
             Callback<List<GitHubResult>> {
             override fun clone(): Call<List<GitHubResult>> {
                 TODO("Not yet implemented")

@@ -10,9 +10,9 @@ import retrofit2.http.Path
 
 
 interface GitHubService {
-    @GET("{users}")
+    @GET("{repositories}")
     //fun getListRepository(): Call<List<GitHubResult>>
-    fun getListRepository(@Path("users") users: String): Call<List<GitHubResult>>
+    fun getListRepository(@Path("repositories") repositories: String): Call<List<GitHubResult>>
 
     /*companion object {
 

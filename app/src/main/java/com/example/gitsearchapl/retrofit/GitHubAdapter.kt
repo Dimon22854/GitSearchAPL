@@ -22,7 +22,7 @@ class GitHubAdapter(val users: List<GitHubResult>) : RecyclerView.Adapter<GitHub
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.ResultSearch.text = users[position].login
+        holder.ResultSearch.text = users[position].name
         holder.ResultUrl.text = users[position].html_url
     }
 
