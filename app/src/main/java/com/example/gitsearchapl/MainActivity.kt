@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity() {
         val users = mutableListOf<GitHubResult>()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
+            .baseUrl("https://api.github.com/search/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
         val api = retrofit.create(GitHubService::class.java)
 
         //val repos: Call<List<Repo>> = api.getListRepository("octocat")
         btn_search.setOnClickListener {
-            api.getListRepository("repositories").enqueue(object : Call<List<GitHubResult>>,
+            api.getListRepository("sql").enqueue(object : Call<List<GitHubResult>>,
                 Callback<List<GitHubResult>> {
                 override fun clone(): Call<List<GitHubResult>> {
                     TODO("Not yet implemented")
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                     response: Response<List<GitHubResult>>
                 ) {
                     showData(response.body()!!)
-                    //d("Dima", "onResponse: ${response.body()!![0].login}")
+                    d("Dima", "onResponse: ${response.body()!![0].name}")
                 }
 
                 override fun onFailure(call: Call<List<GitHubResult>>, t: Throwable) {
