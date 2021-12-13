@@ -13,7 +13,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import com.google.firebase.database.core.Repo
 import okhttp3.Request
 import okio.Timeout
 
@@ -25,17 +24,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val users = mutableListOf<GitHubResult>()
+        //val users = mutableListOf<GitHubResult>()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.github.com/search/")
+            .baseUrl("https://api.github.com/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
         val api = retrofit.create(GitHubService::class.java)
 
-        //val repos: Call<List<Repo>> = api.getListRepository("octocat")
         btn_search.setOnClickListener {
-            api.getListRepository("sql").enqueue(object : Call<List<GitHubResult>>,
+            api.getListRepository("grit").enqueue(object : Call<List<GitHubResult>>,
                 Callback<List<GitHubResult>> {
                 override fun clone(): Call<List<GitHubResult>> {
                     TODO("Not yet implemented")
@@ -74,31 +72,17 @@ class MainActivity : AppCompatActivity() {
                     response: Response<List<GitHubResult>>
                 ) {
                     showData(response.body()!!)
-                    d("Dima", "onResponse: ${response.body()!![0].name}")
+                    d("Data", "onResponse")
                 }
 
                 override fun onFailure(call: Call<List<GitHubResult>>, t: Throwable) {
-                    d("Dima", "onFailure")
+                    d("Data", "onFailure")
                 }
-
             })
         }
 
 
 
-        /*api.getListRepository("users").enqueue( object : Callback<List<GitHubResult>>{
-            override fun onResponse(
-                call: Call<List<GitHubResult>>,
-                response: Response<List<GitHubResult>>
-            ) {
-                showData(response.body()!!)
-                //d("Dima", "onResponse: ${response.body()!![0].login}")
-            }
-
-            override fun onFailure(call: Call<List<GitHubResult>>, t: Throwable) {
-                d("Dima", "onFailure")
-            }
-        })*/
     }
 
     private fun showData(users: List<GitHubResult>) {

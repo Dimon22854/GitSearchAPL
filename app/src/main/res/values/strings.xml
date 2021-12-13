@@ -2,5 +2,5 @@
     <string name="app_name">GitHubSearchAPL</string>
     <string name="button">Button</string>
     <string name="githubsearchapl">GitHubSearchAPL</string>
-    <string name="search">Поиск</string>
+    <string name="search">Search</string>
 </resources>
