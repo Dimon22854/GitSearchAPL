@@ -3,6 +3,8 @@ package com.example.gitsearchapl
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gitsearchapl.retrofit.GitHubAdapter
 import com.example.gitsearchapl.retrofit.GitHubResult
@@ -82,18 +84,17 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
     }
 
     private fun showData(users: List<GitHubResult>) {
 
         list_search.apply {
+
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = GitHubAdapter(users)
 
         }
     }
-
-
 }
+
 
