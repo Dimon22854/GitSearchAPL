@@ -6,61 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_search"
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="8dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:clipToPadding="false"
-        android:paddingBottom="8dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
-
-    <TextView
-        android:id="@+id/textGitHubSearchAPL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:fontFamily="@font/aldrich"
-        android:textColor="#ffc0cb"
-        android:textSize="28dp"
-        android:text="@string/githubsearchapl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/search_bacground"
-        android:iconifiedByDefault="false"
-        android:queryHint="Click here"
-        app:layout_constraintEnd_toStartOf="@+id/btn_search"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textGitHubSearchAPL">
-
-
-    </SearchView>
-
-    <Button
-        android:id="@+id/btn_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
-        android:text="@string/search"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
-        app:layout_constraintStart_toStartOf="@+id/textGitHubSearchAPL"
-        app:layout_constraintTop_toTopOf="@+id/searchView"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/github_navigation" />
 </androidx.constraintlayout.widget.ConstraintLayout>

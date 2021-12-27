@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         //val users = mutableListOf<GitHubResult>()
 
-        val retrofit = Retrofit.Builder()
+        /*val retrofit = Retrofit.Builder()
             .baseUrl("https://api.github.com/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
             adapter = GitHubAdapter(users)
 
         }
-    }
-}
+    }*/
+}}
 
 
