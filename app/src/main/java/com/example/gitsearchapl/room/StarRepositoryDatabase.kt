@@ -1,4 +1,4 @@
-package com.example.roomapp.data
+package com.example.gitsearchapl.room
 
 import android.content.Context
 import androidx.room.Database

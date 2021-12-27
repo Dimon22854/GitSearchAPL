@@ -1,4 +1,4 @@
-package com.example.roomapp.data
+package com.example.gitsearchapl.room
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

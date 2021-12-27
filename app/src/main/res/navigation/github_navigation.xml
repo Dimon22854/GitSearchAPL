@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/search_Fragment"
-        android:name="com.example.gitsearchapl.Search_Fragment"
+        android:name="com.example.gitsearchapl.fragment.search.Search_Fragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/information_Fragment"
-        android:name="com.example.gitsearchapl.Information_Fragment"
+        android:name="com.example.gitsearchapl.fragment.information.Information_Fragment"
         android:label="fragment_information"
         tools:layout="@layout/fragment_information" >
         <action
