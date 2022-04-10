@@ -7,14 +7,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="387dp"
-        android:layout_height="131dp"
+        android:layout_width="359dp"
+        android:layout_height="129dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/search_bacground"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/search_bacground" />
 
     <TextView
         android:id="@+id/ResultSearch"

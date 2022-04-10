@@ -26,16 +26,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //val users = mutableListOf<GitHubResult>()
+        val users = mutableListOf<GitHubResult>()
 
-        /*val retrofit = Retrofit.Builder()
+        val retrofit = Retrofit.Builder()
             .baseUrl("https://api.github.com/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
         val api = retrofit.create(GitHubService::class.java)
 
         btn_search.setOnClickListener {
-            api.getListRepository("grit").enqueue(object : Call<List<GitHubResult>>,
+            api.getListRepository("merb-core").enqueue(object : Call<List<GitHubResult>>,
                 Callback<List<GitHubResult>> {
                 override fun clone(): Call<List<GitHubResult>> {
                     TODO("Not yet implemented")
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
             adapter = GitHubAdapter(users)
 
         }
-    }*/
-}}
+    }
+}
 
 
